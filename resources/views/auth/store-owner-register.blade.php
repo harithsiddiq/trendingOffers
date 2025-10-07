@@ -35,9 +35,9 @@
                         </svg>
                         Full Name
                     </label>
-                    <input type="text" 
-                           id="name" 
-                           name="name" 
+                    <input type="text"
+                           id="name"
+                           name="name"
                            value="{{ old('name') }}"
                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all duration-300 bg-gray-50/50 hover:bg-white @error('name') border-red-400 @enderror text-gray-800 placeholder-gray-500"
                            placeholder="Enter your full name"
@@ -56,9 +56,9 @@
                         </svg>
                         Email Address
                     </label>
-                    <input type="email" 
-                           id="email" 
-                           name="email" 
+                    <input type="email"
+                           id="email"
+                           name="email"
                            value="{{ old('email') }}"
                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all duration-300 bg-gray-50/50 hover:bg-white @error('email') border-red-400 @enderror text-gray-800 placeholder-gray-500"
                            placeholder="Enter your email address"
@@ -77,9 +77,9 @@
                         </svg>
                         Commercial Registration Number
                     </label>
-                    <input type="text" 
-                           id="cr_number" 
-                           name="cr_number" 
+                    <input type="text"
+                           id="cr_number"
+                           name="cr_number"
                            value="{{ old('cr_number') }}"
                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all duration-300 bg-gray-50/50 hover:bg-white @error('cr_number') border-red-400 @enderror text-gray-800 placeholder-gray-500"
                            placeholder="Enter your CR number"
@@ -98,9 +98,9 @@
                         Commercial Registration Document
                     </label>
                     <div class="relative">
-                        <input type="file" 
-                               id="cr_image" 
-                               name="cr_image" 
+                        <input type="file"
+                               id="cr_image"
+                               name="cr_image"
                                accept="image/*"
                                class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all duration-300 bg-gray-50/50 hover:bg-white @error('cr_image') border-red-400 @enderror file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-purple-500 file:to-pink-500 file:text-white hover:file:from-purple-600 hover:file:to-pink-600 file:shadow-lg"
                                required>
@@ -124,9 +124,9 @@
                         </svg>
                         Password
                     </label>
-                    <input type="password" 
-                           id="password" 
-                           name="password" 
+                    <input type="password"
+                           id="password"
+                           name="password"
                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all duration-300 bg-gray-50/50 hover:bg-white @error('password') border-red-400 @enderror text-gray-800 placeholder-gray-500"
                            placeholder="Create a strong password"
                            required>
@@ -143,16 +143,16 @@
                         </svg>
                         Confirm Password
                     </label>
-                    <input type="password" 
-                           id="password_confirmation" 
-                           name="password_confirmation" 
+                    <input type="password"
+                           id="password_confirmation"
+                           name="password_confirmation"
                            class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 transition-all duration-300 bg-gray-50/50 hover:bg-white text-gray-800 placeholder-gray-500"
                            placeholder="Confirm your password"
                            required>
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" 
+                <button type="submit"
                         class="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-bold py-4 px-6 rounded-xl hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 focus:outline-none focus:ring-4 focus:ring-purple-500/50 focus:ring-offset-2 transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-xl hover:shadow-2xl relative overflow-hidden group">
                     <span class="relative z-10 flex items-center justify-center">
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -167,7 +167,7 @@
             <!-- Additional Links -->
             <div class="mt-8 text-center">
                 <p class="text-sm text-gray-700">
-                    Already have an account? 
+                    Already have an account?
                     <a href="#" class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 font-semibold transition-all duration-300 hover:underline">Sign in here</a>
                 </p>
             </div>
@@ -176,8 +176,8 @@
         <!-- Footer -->
         <div class="text-center mt-8 relative z-10">
             <p class="text-xs text-blue-200/80">
-                By registering, you agree to our 
-                <a href="#" class="text-white hover:text-blue-200 font-medium transition-colors duration-300 underline decoration-dotted">Terms of Service</a> and 
+                By registering, you agree to our
+                <a href="#" class="text-white hover:text-blue-200 font-medium transition-colors duration-300 underline decoration-dotted">Terms of Service</a> and
                 <a href="#" class="text-white hover:text-blue-200 font-medium transition-colors duration-300 underline decoration-dotted">Privacy Policy</a>
             </p>
         </div>
