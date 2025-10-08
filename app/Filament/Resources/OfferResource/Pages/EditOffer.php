@@ -4,16 +4,16 @@ namespace App\Filament\Resources\OfferResource\Pages;
 
 use App\Filament\Resources\OfferResource;
 use Filament\Actions;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Resources\Pages\EditRecord;
 
-class ManageOffers extends ManageRecords
+class EditOffer extends EditRecord
 {
     protected static string $resource = OfferResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\DeleteAction::make(),
         ];
     }
 }

@@ -31,14 +31,37 @@ class ReviewResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')
+                    ->label('ID')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label('User')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('store.name')
+                    ->label('Store')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('rating')
+                    ->label('Rating')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('comment')
+                    ->label('Comment')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Updated At')
+                    ->dateTime()
+                    ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

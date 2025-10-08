@@ -25,7 +25,7 @@ class OfferController extends Controller
 
     public function store(Request $request)
     {
-//        return $request->all();
+    //    return $request->all();
         return $this->service->store($request);
     }
 
@@ -87,7 +87,7 @@ class OfferController extends Controller
         $offers = Offer::whereHas('store', function($query) {
             $query->where('user_id', Auth::id());
         })->with('store')->get();
-        
+
         return view('offers.index', compact('offers'));
     }
 }

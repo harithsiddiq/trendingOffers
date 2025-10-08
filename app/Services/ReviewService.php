@@ -17,6 +17,7 @@ class ReviewService
 
     public function store(Request $request)
     {
+        // return $request->all();
         return Review::create($request->all());
     }
 
