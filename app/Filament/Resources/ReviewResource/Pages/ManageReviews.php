@@ -13,7 +13,7 @@ class ManageReviews extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            // Create button hidden as requested
         ];
     }
 }
