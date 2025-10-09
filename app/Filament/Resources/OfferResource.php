@@ -18,6 +18,18 @@ class OfferResource extends Resource
     protected static ?string $model = Offer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    
+    protected static ?string $modelLabel = 'Offer';
+    
+    public static function getModelLabel(): string
+    {
+        return __('Offer');
+    }
+    
+    public static function getPluralModelLabel(): string
+    {
+        return __('Offers');
+    }
 
     public static function form(Form $form): Form
     {
@@ -38,7 +50,11 @@ class OfferResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('end_date')
                     ->required(),
-                Forms\Components\TextInput::make('discount_type')
+                Forms\Components\Select::make('discount_type')
+                    ->options([
+                        'percent' => 'Percentage',
+                        'fixed' => 'Fixed Amount'
+                    ])
                     ->required(),
                 Forms\Components\TextInput::make('discount_value')
                     ->required()
@@ -52,8 +68,9 @@ class OfferResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('store_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('store.name')
+                    ->label('Store')
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),

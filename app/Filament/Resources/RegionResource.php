@@ -18,6 +18,18 @@ class RegionResource extends Resource
     protected static ?string $model = Region::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-map-pin';
+    
+    protected static ?string $modelLabel = 'Region';
+    
+    public static function getModelLabel(): string
+    {
+        return __('Region');
+    }
+    
+    public static function getPluralModelLabel(): string
+    {
+        return __('Regions');
+    }
 
     public static function form(Form $form): Form
     {

@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/stores', [\App\Http\Controllers\StoreController::class, 'storeWeb'])->name('stores.store');
     Route::get('/my-stores', [\App\Http\Controllers\StoreController::class, 'myStores'])->name('stores.index');
     Route::get('/stores/my', [\App\Http\Controllers\StoreController::class, 'myStores'])->name('stores.my');
-    
+
     // Offer routes
     Route::get('/offers/create', [\App\Http\Controllers\OfferController::class, 'create'])->name('offers.create');
     Route::post('/offers', [\App\Http\Controllers\OfferController::class, 'storeWeb'])->name('offers.store');

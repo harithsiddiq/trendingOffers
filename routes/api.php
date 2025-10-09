@@ -2,6 +2,7 @@
 
 
 use \Illuminate\Support\Facades\Route;
+use App\Models\Store;
 
 Route::prefix('v1')->group(function () {
     // Authentication routes (public)
@@ -17,7 +18,17 @@ Route::prefix('v1')->group(function () {
         Route::put('/change-password', [\App\Http\Controllers\AuthController::class, 'changePassword']);
 
         // API Resources (protected)
+        // Toggle store publish status
+        Route::put('/stores/{store}/toggle-publish', function (Store $store) {
+            $store->is_published = !$store->is_published;
+            $store->save();
 
+            return response()->json([
+                'success' => true,
+                'is_published' => $store->is_published,
+                'message' => $store->is_published ? 'Store published successfully' : 'Store unpublished successfully'
+            ]);
+        });
     });
 
     Route::apiResource('stores', \App\Http\Controllers\StoreController::class);

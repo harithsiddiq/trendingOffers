@@ -21,6 +21,18 @@ class StoreResource extends Resource
     protected static ?string $model = Store::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
+    
+    protected static ?string $modelLabel = 'Store';
+    
+    public static function getModelLabel(): string
+    {
+        return __('Store');
+    }
+    
+    public static function getPluralModelLabel(): string
+    {
+        return __('Stores');
+    }
 
     public static function form(Form $form): Form
     {
@@ -107,6 +119,10 @@ class StoreResource extends Resource
                     ->label('Category')
                     ->sortable()
                     ->searchable(),
+                Tables\Columns\IconColumn::make('is_published')
+                    ->boolean()
+                    ->label('Published')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('address')
@@ -138,6 +154,14 @@ class StoreResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('togglePublish')
+                    ->label(fn (Store $record): string => $record->is_published ? 'Unpublish' : 'Publish')
+                    ->icon(fn (Store $record): string => $record->is_published ? 'heroicon-o-x-circle' : 'heroicon-o-check-circle')
+                    ->color(fn (Store $record): string => $record->is_published ? 'danger' : 'success')
+                    ->action(function (Store $record): void {
+                        $record->is_published = !$record->is_published;
+                        $record->save();
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

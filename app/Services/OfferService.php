@@ -20,6 +20,14 @@ class OfferService
             // By default, only return active offers
             $query->where('is_active', true);
         }
+        
+        // Filter offers by end date - only include offers that haven't expired
+        if ($request && $request->has('include_expired')) {
+            // Include expired offers if specifically requested
+        } else {
+            // By default, only return offers that haven't expired yet
+            $query->whereDate('end_date', '>=', now());
+        }
 
         if ($request && $request->has('business_id')) {
             // Filter by business ID if provided

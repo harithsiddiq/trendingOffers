@@ -18,12 +18,41 @@ class ReviewResource extends Resource
     protected static ?string $model = Review::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-star';
+    
+    protected static ?string $modelLabel = 'Review';
+    
+    public static function getModelLabel(): string
+    {
+        return __('Review');
+    }
+    
+    public static function getPluralModelLabel(): string
+    {
+        return __('Reviews');
+    }
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Select::make('user_id')
+                    ->relationship('user', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+                Forms\Components\Select::make('store_id')
+                    ->relationship('store', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+                Forms\Components\TextInput::make('rating')
+                    ->numeric()
+                    ->minValue(1)
+                    ->maxValue(5)
+                    ->required(),
+                Forms\Components\Textarea::make('comment')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 

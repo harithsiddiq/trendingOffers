@@ -27,6 +27,11 @@ class Offer extends Model
         'is_active'
     ];
 
+    public function store()
+    {
+        return $this->belongsTo(Store::class);
+    }
+
     public function getIsOfferValidAttribute()
     {
         // test these value "start_date": "2025-08-08",
