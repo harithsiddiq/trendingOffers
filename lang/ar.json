@@ -61,5 +61,28 @@
     "Percentage": "نسبة مئوية",
     "Fixed Amount": "مبلغ ثابت",
     "Label": "التسمية",
-    "Icon": "الأيقونة"
+    "Icon": "الأيقونة",
+    
+    "Welcome to Your Store Dashboard": "مرحباً بك في لوحة تحكم متجرك",
+    "Manage your stores, offers, and view statistics all in one place.": "إدارة متاجرك وعروضك وعرض الإحصائيات في مكان واحد.",
+    "Quick Actions": "إجراءات سريعة",
+    "Manage Stores": "إدارة المتاجر",
+    "Manage Offers": "إدارة العروض",
+    "View Analytics": "عرض التحليلات",
+    "Store Statistics": "إحصائيات المتجر",
+    "My Stores": "متاجري",
+    "Total stores you manage": "إجمالي المتاجر التي تديرها",
+    "Customer reviews for your stores": "تقييمات العملاء لمتاجرك",
+    "Phone": "رقم الهاتف",
+    "Is Active": "نشط",
+    
+    "My Store": "متجري",
+    "My Offers": "عروضي",
+    "Create Offer": "إنشاء عرض",
+    "Edit Store": "تعديل المتجر",
+    "Edit Offer": "تعديل العرض",
+    "List Stores": "قائمة المتاجر",
+    "List Offers": "قائمة العروض",
+    "Client Dashboard": "لوحة تحكم العميل",
+    "Store Owner Panel": "لوحة تحكم صاحب المتجر"
 }

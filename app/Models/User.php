@@ -3,15 +3,32 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasApiTokens, HasFactory, Notifiable;
+
+
+    public function canAccessPanel(\Filament\Panel $panel): bool {
+
+        $panelId = $panel->getId();
+        if($panelId == 'client'){
+            return $this->role == 'owner';
+        }
+
+        if($panelId == 'admin'){
+            return $this->role == 'admin';
+        }
+
+        return false;
+
+    }
 
     public function stores()
     {
@@ -29,6 +46,7 @@ class User extends Authenticatable
         'password',
         'cr_number',
         'cr_image',
+        'role',
     ];
 
     /**
