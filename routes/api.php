@@ -17,6 +17,13 @@ Route::prefix('v1')->group(function () {
         Route::put('/profile', [\App\Http\Controllers\AuthController::class, 'updateProfile']);
         Route::put('/change-password', [\App\Http\Controllers\AuthController::class, 'changePassword']);
 
+        // Settings
+        Route::get('/settings', [\App\Http\Controllers\SettingsController::class, 'show']);
+
+        // Reports
+        Route::post('/reports/fake-business', [\App\Http\Controllers\FakeBusinessReportController::class, 'store']);
+        Route::get('/reports/fake-business/by-user/{user_id}/store/{store_id}', [\App\Http\Controllers\FakeBusinessReportController::class, 'showByUserAndStore']);
+
         // API Resources (protected)
         // Toggle store publish status
         Route::put('/stores/{store}/toggle-publish', function (Store $store) {

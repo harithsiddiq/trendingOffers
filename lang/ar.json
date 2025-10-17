@@ -62,7 +62,7 @@
     "Fixed Amount": "مبلغ ثابت",
     "Label": "التسمية",
     "Icon": "الأيقونة",
-    
+
     "Welcome to Your Store Dashboard": "مرحباً بك في لوحة تحكم متجرك",
     "Manage your stores, offers, and view statistics all in one place.": "إدارة متاجرك وعروضك وعرض الإحصائيات في مكان واحد.",
     "Quick Actions": "إجراءات سريعة",
@@ -75,7 +75,7 @@
     "Customer reviews for your stores": "تقييمات العملاء لمتاجرك",
     "Phone": "رقم الهاتف",
     "Is Active": "نشط",
-    
+
     "My Store": "متجري",
     "My Offers": "عروضي",
     "Create Offer": "إنشاء عرض",
@@ -84,5 +84,11 @@
     "List Stores": "قائمة المتاجر",
     "List Offers": "قائمة العروض",
     "Client Dashboard": "لوحة تحكم العميل",
-    "Store Owner Panel": "لوحة تحكم صاحب المتجر"
+    "Store Owner Panel": "لوحة تحكم صاحب المتجر",
+    "Fake Business Report": "بلاغ عن نشاط مزيف",
+    "Fake Business Reports": "بلاغات",
+    "Reported By": "أُبلغ بواسطة",
+    "Reported Store": "المتجر المُبلغ عنه",
+    "Reason": "السبب",
+    "Reported At": "تاريخ البلاغ"
 }

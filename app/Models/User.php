@@ -47,6 +47,10 @@ class User extends Authenticatable implements FilamentUser
         'cr_number',
         'cr_image',
         'role',
+        'tiktok_url',
+        'instagram_url',
+        'whatsapp_url',
+        'x_url',
     ];
 
     /**
