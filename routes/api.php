@@ -8,6 +8,8 @@ Route::prefix('v1')->group(function () {
     // Authentication routes (public)
     Route::post('/register', [\App\Http\Controllers\AuthController::class, 'register']);
     Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
+        // Settings
+    Route::get('/settings', [\App\Http\Controllers\SettingsController::class, 'show']);
 
     // Protected routes (require authentication)
     Route::middleware('auth:sanctum')->group(function () {
@@ -17,8 +19,6 @@ Route::prefix('v1')->group(function () {
         Route::put('/profile', [\App\Http\Controllers\AuthController::class, 'updateProfile']);
         Route::put('/change-password', [\App\Http\Controllers\AuthController::class, 'changePassword']);
 
-        // Settings
-        Route::get('/settings', [\App\Http\Controllers\SettingsController::class, 'show']);
 
         // Reports
         Route::post('/reports/fake-business', [\App\Http\Controllers\FakeBusinessReportController::class, 'store']);

@@ -7,8 +7,7 @@ use Filament\Forms\Form;
 use Filament\Pages\Page; 
 use Filament\Forms\Components\TextInput; 
 use Filament\Notifications\Notification; 
-use Illuminate\Support\Facades\Auth; 
-use App\Models\User;
+use App\Models\Setting;
 
 class Settings extends Page implements Forms\Contracts\HasForms
 {
@@ -24,17 +23,16 @@ class Settings extends Page implements Forms\Contracts\HasForms
 
     public function mount(): void
     {
-        $user = Auth::user();
         // Localize navigation label and title
         static::$navigationLabel = __('Settings');
         static::$title = __('Settings');
         $this->form->fill([
-            'name' => $user->name,
-            'email' => $user->email,
-            'tiktok_url' => $user->tiktok_url,
-            'instagram_url' => $user->instagram_url,
-            'whatsapp_url' => $user->whatsapp_url,
-            'x_url' => $user->x_url,
+            'name' => Setting::get('site_name'),
+            'email' => Setting::get('contact_email'),
+            'tiktok_url' => Setting::get('tiktok_url'),
+            'instagram_url' => Setting::get('instagram_url'),
+            'whatsapp_url' => Setting::get('whatsapp_url'),
+            'x_url' => Setting::get('x_url'),
         ]);
     }
 
@@ -87,15 +85,13 @@ class Settings extends Page implements Forms\Contracts\HasForms
     public function submit(): void
     {
         $state = $this->form->getState();
-        $user = Auth::user();
-        User::query()->whereKey($user->id)->update([
-            'name' => $state['name'] ?? $user->name,
-            'email' => $state['email'] ?? $user->email,
-            'tiktok_url' => $state['tiktok_url'] ?? $user->tiktok_url,
-            'instagram_url' => $state['instagram_url'] ?? $user->instagram_url,
-            'whatsapp_url' => $state['whatsapp_url'] ?? $user->whatsapp_url,
-            'x_url' => $state['x_url'] ?? $user->x_url,
-        ]);
+
+        Setting::set('site_name', $state['name'] ?? null);
+        Setting::set('contact_email', $state['email'] ?? null);
+        Setting::set('tiktok_url', $state['tiktok_url'] ?? null);
+        Setting::set('instagram_url', $state['instagram_url'] ?? null);
+        Setting::set('whatsapp_url', $state['whatsapp_url'] ?? null);
+        Setting::set('x_url', $state['x_url'] ?? null);
 
         Notification::make()
             ->title(__('Settings saved'))
